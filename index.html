@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste</title>
+    <style>
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            flex-direction: column;
+        }
+
+        .content form {
+            width: 450px;
+            padding: 30px;
+            border-radius: 10px;
+            border: 1px solid #ccc;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 50px;
+            box-shadow: 3px 5px 5px #CCC;
+        }
+
+        .content form input {
+            width: 100%;
+            font-size: 14px;
+            margin: 5px 0;
+            padding: 5px;
+        }
+
+        .content form .btn-send {
+            padding: 10px 30px;
+            background: rgb(1, 180, 1);
+            color: #FFF;
+            border: none;
+            border-radius: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+        }
+
+        .content form .btn-send:hover {
+            background: rgb(1, 143, 1);
+        }
+
+        .content .resultado-ok {
+            width: 450px;
+            padding: 10px 30px;
+            background: #8de401;
+            border-radius: 10px;
+            color: #000;
+            margin-top: 25px;
+            display: none;
+        }
+
+        .content .resultado-erro {
+            width: 450px;
+            padding: 10px 30px;
+            background: #e40101;
+            border-radius: 10px;
+            color: #FFF;
+            margin-top: 25px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <form>
+            <input type="text" placeholder="digite a origem.." class="origem" />
+
+            <input type="text" placeholder="digite o destino.." class="destino" />
+            
+            <button class="btn-send" type="button" onclick="calculaValor()">
+                Consultar
+            </button>
+        </form>
+
+        <div class="resultado-ok">
+            Valor do orçamento: <br>
+            <span class="valor"></span>
+        </div>
+
+        <div class="resultado-erro">
+            Tivemos um erro ao solicitar o orçamento, favor entre em contato com nosso whats...
+        </div>
+    </div>
+
+    <script async
+        src="https://maps.googleapis.com/maps/api/js?key=GOOGLE_API_KEY&libraries=places">
+    </script>
+    <script src="./index.js"></script>
+</body>
+</html>
